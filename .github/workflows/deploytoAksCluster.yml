@@ -11,7 +11,7 @@ jobs:
         username: ${{ secrets.acr_productzero_username }}
         password: ${{ secrets.acr_productzero_password }}
     
-    - name: Build and push image to ACR
+    - name: Build and push image to ACReg
       id: build-image
       run: |
         docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t productzero.azurecr.io/productzero:${{ github.sha }} --label dockerfile-path=Dockerfile
